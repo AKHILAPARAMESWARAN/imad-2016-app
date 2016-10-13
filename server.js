@@ -24,9 +24,9 @@ var articles={
   },
   articleTwo:{
      title:'Article Two |Akhila Parameswaran',
-    heading:'Article Two',
-    date:'Oct 15,2016',
-    content:` 
+     heading:'Article Two',
+     date:'Oct 15,2016',
+     content:` 
            <p>
                This is the content of my second article.
            </p>`
@@ -80,7 +80,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/article-one',function(req,res){
-    res.send(createTemplate(articleOne)); 
+    res.send(createTemplate(article-one)); 
 });
 app.get('/article-two',function(req,res){
      res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
