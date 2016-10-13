@@ -32,7 +32,7 @@ var articles={
            </p>`
      
  },
- articleThree:{
+  articleThree:{
      title:'Article Three |Akhila Parameswaran',
      heading:'Article Three',
      date:'Oct 10,2016',
@@ -41,7 +41,6 @@ var articles={
                This is the content of my third article.
            </p>`
      }
-           
 };
 function createTemplate(data){
     var title=data.title;
