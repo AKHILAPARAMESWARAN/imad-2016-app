@@ -87,7 +87,7 @@ return htmlTemplate;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-var pool = new Pool(config)
+var pool = new Pool(config);
 app.get('/test-db',function(req,res){
    //make a select request 
    //return a response with a result
@@ -97,7 +97,7 @@ app.get('/test-db',function(req,res){
        }else {
            res.send(JSON.stringify(result.rows));
        }
-   })
+   });
 });
 var counter=0;
 app.get('/counter',function(req,res){
@@ -115,12 +115,14 @@ app.get('/submit-name',function(req,res) {  //submit- name?name-xxxx
   res.send(JSON.stringify(names));
 });
 
-app.get('/:articleName',function(req,res){
+app.get('/article/:articleName',function(req,res){
     //articleName==article-one
     //articles[articleName]=={} content object for article one
-   
     
-    pool.query("SELECT * FROM article WHERE title= "+req.params.articleName,function(err,result){
+    
+    
+    //SELECT * FROM article WHERE title='article-one'
+    pool.query("SELECT * FROM article WHERE title= '"+req.params.articleName+"'",function(err,result){
       if(err){
            res.status(500).send(err.toString());
        }else {
